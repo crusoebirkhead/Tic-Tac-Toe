@@ -24,7 +24,6 @@ const gameBoard = (() => {
           div.innerHTML = 'O'
           gameStorage[i] = 'O'
         }
-        console.log(gameStorage)
       }, {
         once: true
       });
@@ -38,30 +37,6 @@ const gameBoard = (() => {
   }
 
 })();
-
-
-const player = (() => {
-
-  let player1 = '';
-  let player2 = '';
-
-  const submit1 = document.getElementById('submit1').addEventListener('click', event => {
-    player1 = document.getElementById('name-1').value
-    console.log(player1)
-  })
-
-  const submit2 = document.getElementById('submit2').addEventListener('click', event => {
-    player2 = document.getElementById('name-2').value
-  })
-
-  return {
-    player1,
-    player2,
-    submit1,
-    submit2
-  }
-})();
-
 
 const gameFlow = (() => {
 
@@ -111,6 +86,9 @@ const gameFlow = (() => {
     document.getElementById('restart').addEventListener('click', event => {
         const grid = document.getElementById('grid')
         const square = document.querySelectorAll('.square')
+        document.getElementById('name-1').value = '';
+        document.getElementById('name-2').value = '';
+        gameBoard.roundCount = '';
         announcement.innerHTML = '';
         square.innerHTML = '';
         grid.innerHTML = '';
@@ -125,3 +103,14 @@ const gameFlow = (() => {
   }
 })();
 
+
+let player1 = 'Player X';
+let player2 = 'Player O';
+
+  const submit1 = document.getElementById('submit1').addEventListener('click', event => {
+    player1 = document.getElementById('name-1').value
+  })
+
+  const submit2 = document.getElementById('submit2').addEventListener('click', event => {
+    player2 = document.getElementById('name-2').value
+  })
