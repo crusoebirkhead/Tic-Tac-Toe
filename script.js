@@ -40,10 +40,27 @@ const gameBoard = (() => {
 })();
 
 
-const player = {
+const player = (() => {
 
+  let player1 = '';
+  let player2 = '';
 
-}
+  const submit1 = document.getElementById('submit1').addEventListener('click', event => {
+    player1 = document.getElementById('name-1').value
+    console.log(player1)
+  })
+
+  const submit2 = document.getElementById('submit2').addEventListener('click', event => {
+    player2 = document.getElementById('name-2').value
+  })
+
+  return {
+    player1,
+    player2,
+    submit1,
+    submit2
+  }
+})();
 
 
 const gameFlow = (() => {
@@ -60,34 +77,34 @@ const gameFlow = (() => {
   document.getElementById('grid').addEventListener('click', event => {
 
       if (gameBoard.gameStorage[0] === 'X' && gameBoard.gameStorage[1] === 'X' && gameBoard.gameStorage[2] === 'X') {
-        announcement.textContent += 'Player X wins!'
+        announcement.textContent += `'${player1} wins!'`
       } else if (gameBoard.gameStorage[3] === 'X' && gameBoard.gameStorage[4] === 'X' && gameBoard.gameStorage[5] === 'X'){
-        announcement.textContent += 'Player X wins!'
+        announcement.textContent += `'${player1} wins!'`
       } else if (gameBoard.gameStorage[6] === 'X' && gameBoard.gameStorage[7] === 'X' && gameBoard.gameStorage[8] === 'X'){
-        announcement.textContent += 'Player X wins!'
+        announcement.textContent += `'${player1} wins!'`
       } else if (gameBoard.gameStorage[0] === 'X' && gameBoard.gameStorage[3] === 'X' && gameBoard.gameStorage[6] === 'X'){
-        announcement.textContent += 'Player X wins!'
+        announcement.textContent += `'${player1} wins!'`
       } else if (gameBoard.gameStorage[1] === 'X' && gameBoard.gameStorage[4] === 'X' && gameBoard.gameStorage[7] === 'X'){
-        announcement.textContent += 'Player X wins!'
+        announcement.textContent += `'${player1} wins!'`
       } else if (gameBoard.gameStorage[0] === 'X' && gameBoard.gameStorage[4] === 'X' && gameBoard.gameStorage[8] === 'X'){
-        announcement.textContent += 'Player X wins!'
+        announcement.textContent += `'${player1} wins!'`
       } else if (gameBoard.gameStorage[2] === 'X' && gameBoard.gameStorage[4] === 'X' && gameBoard.gameStorage[6] === 'X'){
-        announcement.textContent += 'Player X wins!'
+        announcement.textContent += `'${player1} wins!'`
       }
       if (gameBoard.gameStorage[0] === 'O' && gameBoard.gameStorage[1] === 'O' && gameBoard.gameStorage[2] === 'O') {
-        announcement.textContent += 'Player O wins!'
+        announcement.textContent += `'${player2} wins!'`
       } else if (gameBoard.gameStorage[3] === 'O' && gameBoard.gameStorage[4] === 'O' && gameBoard.gameStorage[5] === 'O'){
-        announcement.textContent += 'Player O wins!'
+        announcement.textContent += `'${player2} wins!'`
       } else if (gameBoard.gameStorage[6] === 'O' && gameBoard.gameStorage[7] === 'O' && gameBoard.gameStorage[8] === 'O'){
-        announcement.textContent += 'Player O wins!'
+        announcement.textContent += `'${player2} wins!'`
       } else if (gameBoard.gameStorage[0] === 'O' && gameBoard.gameStorage[3] === 'O' && gameBoard.gameStorage[6] === 'O'){
-        announcement.textContent += 'Player O wins!'
+        announcement.textContent += `'${player2} wins!'`
       } else if (gameBoard.gameStorage[1] === 'O' && gameBoard.gameStorage[4] === 'O' && gameBoard.gameStorage[7] === 'O'){
-        announcement.textContent += 'Player O wins!'
+        announcement.textContent += `'${player2} wins!'`
       } else if (gameBoard.gameStorage[0] === 'O' && gameBoard.gameStorage[4] === 'O' && gameBoard.gameStorage[8] === 'O'){
-        announcement.textContent += 'Player O wins!'
+        announcement.textContent += `'${player2} wins!'`
       } else if (gameBoard.gameStorage[2] === 'O' && gameBoard.gameStorage[4] === 'O' && gameBoard.gameStorage[6] === 'O'){
-        announcement.textContent += 'Player O wins!'
+        announcement.textContent += `'${player2} wins!'`
       }
   })
   //Button for restarting game
@@ -107,3 +124,4 @@ const gameFlow = (() => {
     gameLoad,
   }
 })();
+
