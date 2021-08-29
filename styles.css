@@ -1,6 +1,13 @@
 body {
     background-color: #f9f4ef;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid #716040;
 }
 
 .gridContainer {
@@ -9,8 +16,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 5px;
-    margin: 0 auto;
-    width: 50%;
+    margin: 100px auto 0 auto;
+    width: 30%;
     height: 30em;
     background-color: #eaddcf;
 }
@@ -25,14 +32,31 @@ body {
     color: white;
 }
 
-#start {
-    border-radius: 3px;
-    border: 3px solid #8c7851;
-    background-color: #fffffe;
-    padding: 1.2rem 2rem;
+#announcement {
+    font-size: 50px;
+    position: absolute;
+    left: 42.5%;
+    top: 2%;
+}
+
+#start, #restart {
     -webkit-appearance: none;
     -moz-appearance: none;
-    border: none;
+    border-radius: 3px;
+    border: 3px solid #716040;
+    background-color: #fffffe;
+    padding: 1.2rem 2rem;
     color: #8c7851;
     margin-top: 20px;
+    font-weight: bold;
+}
+
+#player-1{
+    position: absolute;
+    left: 10%;
+}
+
+#player-2{
+    position: absolute;
+    right: 10%;
 }
