@@ -81,7 +81,27 @@ const gameFlow = (() => {
       } else if (gameBoard.gameStorage[2] === 'O' && gameBoard.gameStorage[4] === 'O' && gameBoard.gameStorage[6] === 'O'){
         announcement.textContent += `'${player2} wins!'`
       }
+      if (gameBoard.gameStorage[0] === 'X' || gameBoard.gameStorage[0] === 'O'){
+        if(gameBoard.gameStorage[1] === 'X' || gameBoard.gameStorage[1] === 'O'){
+          if(gameBoard.gameStorage[2] === 'X' || gameBoard.gameStorage[2] === 'O'){
+            if (gameBoard.gameStorage[3] === 'X' || gameBoard.gameStorage[3] === 'O'){
+              if (gameBoard.gameStorage[4] === 'X' || gameBoard.gameStorage[4] === 'O') {
+                if (gameBoard.gameStorage[5] === 'X' || gameBoard.gameStorage[5] === 'O') {
+                  if (gameBoard.gameStorage[6] === 'X' || gameBoard.gameStorage[6] === 'O'){
+                    if (gameBoard.gameStorage[7] === 'X' || gameBoard.gameStorage[7] === 'O'){
+                      if (gameBoard.gameStorage[8] === 'X' || gameBoard.gameStorage[8] === 'O'){
+                        announcement.textContent += "It's a tie!"
+                      }
+                    }
+                  } 
+                }
+              }
+            }
+          }
+        }
+      }    
   })
+  
   //Button for restarting game
     document.getElementById('restart').addEventListener('click', event => {
         const grid = document.getElementById('grid')
